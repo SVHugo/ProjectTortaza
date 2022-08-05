@@ -5,6 +5,7 @@
     --bg-color_productos: rgb(249,219,121);
     /* color de fondo detras del titulo,precio y botones*/
     --bg-color_caja_productos: rgb(249,219,121);
+    --bg_content_products: rgb(49 30 36);
 }
 .section_productos{
     background: rgb(249,219,121);
@@ -34,27 +35,31 @@
 }
 .contenedor_productos_postre{
     width: 230px;
-    
-    background-color: var(--bg-color_caja_productos);
+    background-color: var(--bg_content_products);
     margin: 1em;
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
-    border-radius: 3px;
+    border-radius: 5px;
 }
 .imagen_postre{
     width: 100%;
     height: 190px;
-    background-color: #F53240;
+
+    border-radius: 5px 5px 0px 0px;
     border-radius: 4px;
     position: relative;
+    margin-bottom: 0.5em;
 }
 .imagen_postre >img{
     width: 100%;
     height: 100%;
+    border-radius: 5px 5px 20px 20px;
 }
 .titulo_postre{
     padding: 0.5em 1em;
     width: 100%;
     height: 120px;
+    border-radius: 20px 20px 0px 0px;
+    background: var(--bg-color_productos);
 }
 .cake_name>p{
     font-size: 18px;
@@ -68,6 +73,7 @@
     align-items: center;
     width: 100%;
     height: 80px;
+    text-align: center;
 }
 .titulo_postre>span{
     display: block;
@@ -78,6 +84,8 @@
     display: flex;
     justify-content: center;
     height: 75px;
+    background: var(--bg-color_productos);
+    border-radius: 0px 0px 5px 5px;
 }
 .botones {
     padding: 0.5em;

@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
+.container-w {
+    width: 100%;
+}
+
+
+/*.none{
+display: none;
+}*/
+
+body {
+    background: #ffa751;
+    background: linear-gradient(to right, rgb(49, 30, 36), #ffa751);
+}
+
+.bg {
+    background-image: url(/img/restarurante.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.imp {
+    height: 830px;
+    width: 43%;
+    z-index: 100;
+    position: absolute;
+    right: 50%;
+}
+
+.bg-red {
+    background: rgb(49, 30, 36);
+}
+
+.mtop {
+    margin-top: 2%;
+}
+
+#regi {
+    cursor: pointer;
+}
+
+#log {
+    cursor: pointer;
+}
+
+.colp1 {
+    height: 830px;
+    width: 82%;
+    z-index: 100;
+    position: absolute;
+}
+
+#cardlog {
+    z-index: 100;
+}
+
+#cardregi {
+    z-index: 50;
+}
+
+@media (max-width: 550px) {
+    #logos {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1070px) {
+    .imp {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1070px) {
+    .colp1 {
+        width: 43%;
+        z-index: 100;
+        position: absolute;
+        left: 50%;
+    }
+    #cardlog {
+        z-index: 100;
+    }
+    #cardregi {
+        z-index: 50;
+    }
+}
+
+.fstyle {
+    font-family: 'Festive', sans-serif;
+    font-size: 5em;
+}
+
+
+/* IMPORTE DE FUENTE */
+
+@import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
+.section {
+    height: 200vh;
+}
+
+
+/*------------------------*/
+
+
+/* CATEGORIAS */
+
+
+/*------------------------------------*/

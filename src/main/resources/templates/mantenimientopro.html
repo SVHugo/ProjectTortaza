@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/headerm.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/mantenimientopro.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}">
+	<title>
+		Dashboard
+	</title>
+
+</head>
+
+<body>
+	<main>
+		<div class="dashboard">
+			<div class="title_admin">
+				<a th:href="@{/salir}">Salir</a>
+			</div>
+			<div class="st_dash">
+				<p>Dashboard</p>
+			</div>
+			<div class="content_ul">
+				<ul class="st_ul">
+					<li class="st_li_dash">
+						<a th:href="@{/administrar/productos}">
+							Mantenimiento de Productos
+						</a>
+					<li class="st_li_dash">
+						<a th:href="@{/administrar/usuarios}">
+							Mantenimiento de Clientes
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="sombra_dashboard">
+			<div class="title_admin">
+				<a th:href="@{/salir}">Salir</a>
+			</div>
+			<div class="st_dash">
+				<p>Dashboard</p>
+			</div>
+			<div class="content_ul">
+				<ul class="st_ul">
+					<li class="st_li_dash">
+						<a th:href="@{/administrar/productos}">
+							Mantenimiento de Productos
+						</a>
+					<li class="st_li_dash">
+						<a th:href="@{/administrar/usuarios}">
+							Mantenimiento de Clientes
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="content_mantenimiento_general">
+			<div class="title_mante">
+				<p>Mantenimiento de Productos</p>
+			</div>
+			<div class="content_crear_buscar">
+				<div class="content_crear">
+					<a class="btn_crear" th:href="@{/administrar/productos/nuevo}">Nuevo Producto</a>
+				</div>
+				<form class="form_buscar" method="post" th:action="@{/search}">
+					<input class="mr-sm-2 input_search" type="search" placeholder="Buscar" aria-label="Search" name="nombre"
+						autocomplete="off">
+					<button class=" my-2 my-sm-0 button_buscar" type="submit">Buscar</button>
+				</form>
+			</div>
+			<div th:if="${message}" class="container">
+				<div th:classappend="${'alert-'+message.type}" class="alert text-center" role="alert">
+					<span th:text="${message.content}">
+					</span>
+				</div>
+			</div>
+			<section class="content_table">
+				<div class="caja_over_flow">
+					<div class="content_titles_mantProducto">
+						<table class="content_table_all">
+							<thead>
+								<tr scope="col">
+									<td>ID</td>
+									<td>CATEGORIA</td>
+									<td>NOMBRE</td>
+									<td>PRECIO</td>
+									<td>Stock</td>
+									<td>ESTADO</td>
+									<td colspan="2">Opciones</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each=" productos: ${Productosdes}">
+									<td th:text="${productos.id_producto}"></td>
+									<td th:text="${productos.id_categoria}"></td>
+									<td th:text="${productos.nombre}"></td>
+									<td th:text="${productos.precio}"></td>
+									<td th:text="${productos.Stock}"></td>
+									<td th:text="${productos.estadoproducto}"></td>
+									<td>
+										<div class="botones">
+											<a th:href="@{/editar/}+${productos.id_producto}"
+												class="btn_edit">Actualizar</a>
+											<a th:href="@{/bloquearproducto/}+${productos.id_producto}"
+												class="btn_desac">Desactivar</a>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+			<!--				DESACTIVAR PRODUCTOS			-->
+			<div class="title_mante">
+				Productos Desactivados
+			</div>
+			<section class="content_desactivado">
+				<div class="caja_producto">
+					<div class="content_titles_mantProducto">
+						<table class="content_table_all">
+							<thead>
+								<tr scope="col">
+									<td>ID</td>
+									<td>CATEGORIA</td>
+									<td>NOMBRE</td>
+									<td>PRECIO</td>
+									<td>Stock</td>
+									<td>ESTADO</td>
+									<td colspan="2">Opciones</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each=" productos: ${Productosbloq}">
+									<td th:text="${productos.id_producto}"></td>
+									<td th:text="${productos.id_categoria}"></td>
+									<td th:text="${productos.nombre}"></td>
+									<td th:text="${productos.precio}"></td>
+									<td th:text="${productos.Stock}"></td>
+									<td th:text="${productos.estadoproducto}"></td>
+									<td>
+										<div class="botones">
+											<a th:href="@{/editar/}+${productos.id_producto}"
+												class="btn_edit">Actualizar</a>
+											<a th:href="@{/desbloquearproducto/}+${productos.id_producto}"
+												class="btn_desac">Activar</a>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+</body>
+
+</html>

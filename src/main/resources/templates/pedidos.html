@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/perfil.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/pedidos.css}" />
+    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/js/header.js"></script>
+    <title>Tortaza</title>
+    <!-- KIT-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script>
+        $(document).ready(function(){
+            $("#mostrardetalle").click(function(){
+                $("#revelar_detalle_pedido").slideToggle(slow);
+            });
+            //$("#revelar_detalle_pedido").css("display","block");
+        });
+    </script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-escritorio">
+            <div class="header-top container-fluid  d-flex justify-content-center align-items-center">
+                <p class="mb-0 p-3 "> Contactanos(+51-987-654-321) </p>
+            </div>
+            <div class="header-middle bg-marron container-fluid">
+                <div class="header-middle_container">
+                    <ul
+                        class="row-cols-md-5 m-0 p-0 d-flex justify-content-center text-align-center align-items-center">
+                        <li class="col px-3 py-5 header-middle_li">
+                            <a class="header-middle_container_a" href="#">NOSOTROS</a>
+                        </li>
+                        </li>
+                        <li class="col px-3 py-5 header-middle_li">
+                            <a class="header-middle_container_a" th:href="@{/carrito}">CARRITO</a>
+                        </li>
+                        <li class="col py-3 header-middle-container-li_marca">
+                            <a class="header-middle_container_a_title" th:href="@{/menu}">TorTaza</a>
+                        </li>
+                        <li class="col px-3 py-5 header-middle_li">
+                            <a class="header-middle_container_a" th:href="@{/perfil}">PERFIL</a>
+                        </li>
+                        <li class="col px-3 py-5 header-middle_li" th:if="${usuario.nombre==null}">
+                            <a class="header-middle_container_a" th:href="@{/login}">INICIAR SESIÓN</a>
+                        </li>
+                        <li class="col px-3 py-5 header-middle_li" th:if="${usuario.nombre!=null}">
+                            <a class="header-middle_container_a" th:href="@{/salir}">SALIR</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-bottom-nav">
+                <ul class="container-fluid justify-content-center m-0 p-0 d-flex">
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/1}">Buttercream</a>
+                    </li>
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/2}">Chocolate</a>
+                    </li>
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/3}">Tres Leches</a>
+                    </li>
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/4}">Tortas Mini</a>
+                    </li>
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/5}">Frutas</a>
+                    </li>
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/6}">Con Anticipacion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="content-nav-mobile" class="header-mobile bg-warning">
+            <div class="header-top_mobile bg-warning">
+                <div class="nav-mobile-desplegable navbar-light bg-light">
+                    <button id="boton-nav" class="navbar-toggler" type="button" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="panel">
+                        <div class="div_cerrar">
+                            <p id="cerrar" class=""> X </p>
+                        </div>
+
+                        <div id="content-ul_div" class="container-fluid panel-content_ul">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">INICIO</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">NOSOTROS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TIENDAS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">CATEGORIAS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">CONTACTANOS</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <span class="header-mobile_span"> Contactanos<br>(+51-987-654-321) </span>
+                <a class="header-mobile_a">Tortaza</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main_pedido">
+        <div class="fondo">
+            <div class="caja_perfil">
+                <div class="contenedor_imagen_perfil">
+                    <img src="/img/imagenPerfiltieneautor.png" alt="imagen perifl">
+                </div>
+                <div class="caja_de_acceso">
+                    <div class="caja_result">
+                        <ul class="acceso_ul">
+                            <li id="stli_acceso" class="stli_acceso">
+                                <a th:href="@{/pedidos}">Ver Pedidos</a>
+                            </li>
+                            <li id="stli_acceso" class="stli_acceso">
+                                <a th:href="@{/perfil}">Ver Perfil</a>
+                            </li>
+                            <li class="stli_acceso">
+                                <a href="#">Mis Favoritos</a>
+                            </li>
+                            <li class="stli_acceso">
+                                <a th:href="@{/editarperfil}">Editar Perfil</a>
+                            </li>
+                            <li class="stli_acceso">
+                                <a href="#">Opiniones</a>
+                            </li>
+                            <li class="stli_acceso">
+                                <a href="#">Calificar</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="contenedor_imagen_perfil">
+                    <img src="/img/imagenPerfiltieneautor.png" alt="imagen perfil">
+                </div>
+            </div>
+            <div class="content_result">
+                <div class="title">
+                    <p>MIS </p>
+                    <p>PEDIDOS</p>
+                </div>
+                <div class="content_ped" th:if="${!usuario.pedido.isEmpty()}" th:each="pedidos : ${usuario.pedido}">
+                    <div class="numero_de_pedido">
+                        <p class="h2 ">Numero de pedido</p>
+                        <p class="h2" th:text="${pedidos.id_pedido}"></p>
+                    </div>
+                    <div class="columna">
+                        <div><p>Producto</p></div>
+                    </div>
+                    <div class="pedido" th:each="detalle : ${pedidos.detalle}">
+                        <ul class="ped_ul">
+
+                            <li class="stli_ped" th:text="${detalle.producto.nombre}">
+                            </li>
+                        </ul>
+                        <!--<a id="mostrardetalle" th:href="@{'/pedidos/'+${pedidos.id_pedido}}">Detalle</a>-->
+                    </div>
+                </div>
+
+                <!-- no sale la ventana de estos datos por que se maneja la etiqueta a por lo tanto recarga la pagina, esa es la razon
+                de que esta parte del codigo, no se muestra pero si llegan sus datos, buscar la manera probando otro tipo de envio de datos por url
+                pero sin que recargue la pagina.
+                de esta manera se podra mostrar el detalle del producto sin la necesidad de recargar -->
+                <!--<div id="revelar_detalle_pedido" class="mostrar_detalle_pedido">
+                    <div class="titulo_detalle">
+                        Detalle del Pedido
+                    </div>
+                    <div class="columnasflex">
+                        <div><p>Producto</p></div>
+                        <div><p>Cantidad</p></div>
+                        <div><p>Precio</p></div>
+                    </div>
+                    <div class="columnasdetalle" th:each="detallex : ${detallepedido}">
+                        <div>
+                            <p th:text="${detallex.producto.nombre}"></p>
+                        </div>
+                        <div><p th:text="${detallex.cantidad}"></p></div>
+                        <div><p th:text="${detallex.subtotal}"></p></div>
+                    </div>
+                </div>-->
+
+            </div>
+        </div>
+    </main>
+    <!--
+    <footer class="text-muted py-5">
+        <div class="container">
+            <p class="float-end mb-1">
+                <a href="#">Back to top</a>
+            </p>
+            <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+            <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+        </div>
+    </footer>-->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+
+:root{
+    /*  color de fondo de los productos*/
+    --bg-color_productos: rgb(249,219,121);
+    /* color de fondo detras del titulo,precio y botones*/
+    --bg-color_caja_productos: rgb(249,219,121);
+}
+.section_productos{
+    background: rgb(249,219,121);
+    font-family: 'Open Sans', sans-serif;
+}
+.contenedor_productos{
+    width: 100%;
+    z-index: 2;
+    font-family: 'Open Sans', sans-serif;
+    /* background: var(--bg-color_productos); */
+    font-weight: 900;
+}
+.contenedor_productos_centrado{
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2em;
+    flex-wrap: wrap;
+}
+.contenedor_img_relative{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+.contenedor_productos_postre{
+    width: 230px;
+    
+    background-color: var(--bg-color_caja_productos);
+    margin: 1em;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+}
+.imagen_postre{
+    width: 100%;
+    height: 190px;
+    background-color: #F53240;
+    border-radius: 4px;
+    position: relative;
+}
+.imagen_postre >img{
+    width: 100%;
+    height: 100%;
+}
+.titulo_postre{
+    padding: 0.5em 1em;
+    width: 100%;
+    height: 120px;
+}
+.cake_name>p{
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.cake_name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+}
+.titulo_postre>span{
+    display: block;
+    font-size: 17px;
+    text-align: center;
+}
+.content_button{
+    display: flex;
+    justify-content: center;
+    height: 75px;
+}
+.botones {
+    padding: 0.5em;
+}
+
+.btn_edit {
+    background: #4483CE;
+    display: block;
+    padding: 0.5em;
+    box-shadow: 0px 0px 5px 1px rgba(49,35,35,0.5);
+    text-decoration: none;
+    color: white;
+    transition: 1s all;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 17px;
+}
+
+.btn_desac {
+    transition: 1s all;
+    background: #F53240;
+    display: block;
+    padding: 0.5em;
+    box-shadow: 0px 0px 5px 1px rgba(49,35,35,0.5);
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 17px;
+}
+
+.btn_edit:hover {
+    box-shadow: 0px 0px 6px 1px rgba(49,35,35,0.5);
+    transition: 1s all;
+    color: white;
+}
+
+.btn_desac:hover {
+    box-shadow: 0px 0px 6px 1px rgba(49,35,35,0.5);
+    transition: 1s all;
+    color: white;
+}
+.contenenedor_fondo_categorias{
+    position: fixed;
+    top: 0%;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+}
+.contenenedor_fondo_categorias >img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* rate */
+.rate{
+    transform: translate(10%, -40%);
+    position: absolute;
+    top: 0%;
+}

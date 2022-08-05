@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/editarpro.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}">
+    <title>
+        Editar Personal
+    </title>
+</head>
+
+<body>
+    <div class="title_producto">
+        <center>EDITAR PERSONAL</center> 
+    </div>
+    <div class="caja_crear">
+        <div class="contenido">
+            <form th:action="@{/nuevopersonal}" th:object="${usuario}" method="POST" class="ul_crear">
+                <div class="st_li">
+                    <label>
+                        Nombres:
+                    </label>
+                    <input th:field="*{nombre}" type="text" class="form-control">
+                </div>
+                <div class="st_li">
+                    <label>
+                        Apellidos:
+                    </label>
+                    <input th:field="*{apellido}" type="text" class="form-control">
+                </div>
+                <div class="st_li">
+                    <label>
+                        Dni:
+                    </label>
+                    <input th:field="*{dni}" type="number" class="form-control">
+                </div>
+                <div class="st_li">
+                    <label>
+                        Correo:
+                    </label>
+                    <input th:field="*{correo}" type="email" class="form-control">
+                </div>
+                <div class="st_li">
+                    <label>
+                        Contraseña:
+                    </label>
+                    <input th:field="*{contrasena}" type="password" class="form-control">
+                </div>
+                <div class="st_li">
+                    <label>
+                        Perfil:
+                    </label>
+                    <select th:field="*{id_tipousuario}">
+                        <option value="2">Personal</option>
+                        <option value="3">Administrador</option>
+                    </select>
+                </div>
+                <div class="st_li">
+                    <label>
+                        Dirección:
+                    </label>
+                    <input th:field="*{direccion_inicial}" type="text">
+                </div>
+                <div class="st_li_btn">
+                    <div class="caja_btn">
+                        <input type="submit" value="Guardar" class="btn btn-primary">
+                    </div>
+                </div>
+            </form>
+            <a style="padding: 1em; display: block;" class="btn btn-primary" th:href="@{/administrar/personal}">Regresar</a>
+        </div>
+    </div>
+</body>
+
+</html>

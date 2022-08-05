@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/editarpro.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}">
+	<title>
+		Detallar
+	</title>
+</head>
+
+<body>
+<!--
+	<div class="title_producto">
+		Detalle Pedido
+	</div>
+	 -->
+	<form th:action="@{/guardarpedido}" th:object="${pedido}" method="POST" class="ul_crear">
+		<div class="container mt-5">
+			<div class="row justify-content-center">
+				<div class="col-md-5">
+					<div class="card">
+						<div class"card-header text-center"> 
+					<br/>
+						<center><b>
+						  <p style="color:rgb(0, 128, 255);font-size:19px;"> DETALLE DEL PEDIDO GESTIONADO POR EL CLIENTE : </p> 
+						</b></center>
+						  </div>
+						<div class="card-body text-center">
+							<div class="row justify-content-center">
+								<div class="col-md-4 float-left">
+									<P></P>
+									<input th:field="*{usuario.nombre}" type="text" readonly="true"
+										class="form-control">
+									<P></P>
+									<p><b>DIRECCION:</b></p>
+									<input th:field="*{direccioncliente}" type="text" readonly="true"class="form-control">  
+									<p><b>FECHA:</b></p>
+									<input th:value="${fecha}" type="text" readonly="true" class="form-control">
+									<p><b>TOTAL:</b></p>
+									<input th:field="*{total}" type="text" readonly="true" class="form-control">
+									<p><b>ESTADO DE PAGO:</b> </p>
+									<select th:field="*{estadopago}" class="form-control" readonly="true">
+										<option value="false">RECHAZADO</option>
+										<option value="true">VERIFICADO</option>
+									</select></p>
+									<br>
+									
+									<!-- regresar-->
+									<a style="padding: 1em; display: block;" class="btn btn-primary"
+										th:href="@{/administrar/pedidos}">Regresar</a>
+								</div>
+
+								<div class="col-md.8 float-right">
+
+
+									<p class="font-weight-light ml-4">
+
+
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</form>
+
+
+
+
+
+
+
+	<!-- Esto es un comentario 
+    
+    <div class="caja_crear">
+        <div class="contenido">
+            <form th:action="@{/guardarpedido}" th:object="${pedido}" method="POST" class="ul_crear">
+                <div class="st_li">
+                    <label>
+                        Id Pedido:
+                    </label>
+                    <input th:field="*{id_pedido}" type="text" readonly="true" class="form-control">
+                </div>
+                <div class="st_li">
+                    <label>
+                        Usuario:
+                    </label>
+                    <input th:field="*{usuario.nombre}" type="text" readonly="true" class="form-control">
+                </div>
+                <div class="st_li">
+                    <label>
+                        direccion del Cliente:
+                    </label>
+                    <input th:field="*{direccioncliente}" type="text" readonly="true" class="form-control">
+                </div>
+                <div class="st_li">
+                    <label>
+                        Fecha:
+                    </label>
+                    <input th:value="${fecha}" type="text" readonly="true" class="form-control" >
+                </div>
+                <div class="st_li">
+                    <label>
+                        Total:
+                    </label>
+                    <input th:field="*{total}" type="text" readonly="true" class="form-control">
+                </div>
+                <div class="st_li">
+                    <label>
+                        Estado de Pago: 
+                    </label>
+                    <select th:field="*{estadopago}">
+                        <option value="false">RECHAZADO</option>
+                        <option value="true">VERIFICADO</option>
+                    </select>
+                </div>
+                
+				
+            </form>
+            <a style="padding: 1em; display: block;" class="btn btn-primary" th:href="@{/administrar/pedidos}">Regresar</a>
+        </div>
+    </div>
+    -->
+
+</body>
+
+</html>

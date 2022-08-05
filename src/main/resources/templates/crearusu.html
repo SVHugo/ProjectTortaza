@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/crearpro.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}">
+    <title>
+        Nuevo Usuario
+    </title>
+	
+
+
+
+</head>
+
+
+
+<body class="body_mante_crear">
+    <div class="content_all">
+        <div class="content_crear_logo">
+            <img th:src="@{/img/patterUser.png}" alt="PatterUser">
+            <p class="logop">T</p>
+        </div>
+        <div class="content_crear_data">
+            <div class="content_form">
+                <form th:action="@{/nuevousuario}" th:object="${Usuario}" method="POST" enctype="multipart/form-data">
+                    <div class="content_mante_crear_title">
+						<h2>Nuevo Cliente</h2>
+					</div>
+                    <div th:if="${message}" class="container">
+                        <div th:classappend="${'alert-'+message.type}" class="alert text-center" role="alert">
+                            <span th:text="${message.content}">
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+						<div class="content_mante_p_error">
+							<p>Nombres</p>
+							<div class="error" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+						</div>
+						<input th:field="*{nombre}" type="text">
+					</div>
+                    <div>
+						<div class="content_mante_p_error">
+							<p>Apellidos</p>
+							<div class="error" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+						</div>
+						<input th:field="*{apellido}" type="text">
+					</div>
+                    <div>
+						<div class="content_mante_p_error">
+							<p>Dni</p>
+							<div class="error"  th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}"></div>
+							<div class="error" th:if="${dnierror}" >
+							<span th:text="${dnierror.content}">
+                            </span>
+							</div>
+						</div>
+						<input th:field="*{dni}" type="number">
+					</div>
+                    <div>
+						<div class="content_mante_p_error">
+							<p>Correo</p>
+							<div class="error" th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}"></div>
+							<div class="error" th:if="${emailerror}" >
+							<span th:text="${emailerror.content}">
+                            </span>
+							</div>
+						</div>
+						<input th:field="*{correo}" type="email">
+					</div>
+                    <div>
+						<div class="content_mante_p_error">
+							<p>Contraseña</p>
+							<div class="error" th:if="${#fields.hasErrors('contrasena')}" th:errors="*{contrasena}"></div>
+						</div>
+						<input type="password" th:field="*{contrasena}" name="password" id="password" >
+						
+					</div>
+                    <div>
+						<div class="content_mante_p_error">
+							<p>Dirección</p>
+							<div class="error"  th:if="${#fields.hasErrors('direccion_inicial')}" th:errors="*{direccion_inicial}"></div>
+						</div>
+						<input th:field="*{direccion_inicial}" type="text">
+					</div>
+                    <div class="content_mante_crear_boton">
+                        <input type="submit" value="Registrar" class="btn btn-primary">
+                        <a class="btn btn-primary " th:href="@{/administrar/usuarios}">Regresar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+</html>

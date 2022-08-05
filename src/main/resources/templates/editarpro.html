@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/crearpro.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}">
+	<title>
+		Actualizar producto
+	</title>
+
+</head>
+
+<body class="body_mante_crear">
+	<div class="content_all">
+		<div class="content_crear_logo">
+			<img th:src="@{/img/patter1.png}" alt="PatterProducto">
+			<p class="logop">T</p>
+		</div>
+		<div class="content_crear_data">
+			<div class="content_form">
+				<form th:action="@{/actualizarproducto}" method="POST" th:object="${producto}"
+					enctype="multipart/form-data">
+					<div class="content_mante_crear_title">
+						<h2>Actualizar Producto</h2>
+					</div>
+					<div th:if="${message}" class="container">
+						<div th:classappend="${'alert-'+message.type}" class="alert text-center" role="alert">
+							<span th:text="${message.content}">
+							</span>
+						</div>
+					</div>
+					<div hidden>
+						<p></p>
+						<input th:field="*{id_producto}" type="hidden">
+					</div>
+					<div class="content_mante_categoria">
+						<p class="mante_p_categoria">Categoria</p>
+						<select th:field="*{id_categoria}">
+							<option value="1">Buttercream</option>
+							<option value="2">Chocolate</option>
+							<option value="3">Tres Leches</option>
+							<option value="4">Tortas Mini</option>
+							<option value="5">Frutas</option>
+							<option value="6">Pedidos Con Anticipacion</option>
+						</select>
+					</div>
+					<div>
+						<div class="content_mante_p_error">
+							<p>Nombre</p>
+							<div class="error" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+						</div>
+						<input th:field="*{nombre}" spellcheck="false" type="text">
+					</div>
+					<div>
+						<div class="content_mante_p_error">
+							<p>Descripcion</p>
+							<div class="error" th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}">
+							</div>
+						</div>
+						<input th:field="*{descripcion}" spellcheck="false" type="text">
+					</div>
+					<div>
+						<div class="content_mante_p_error">
+							<p>Precio</p>
+							<div class="error" th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}"></div>
+						</div>
+						<input th:field="*{precio}" type="number" />
+					</div>
+					<div>
+						<div class="content_mante_p_error">
+							<p>Stock</p>
+							<div class="error" th:if="${#fields.hasErrors('Stock')}" th:errors="*{Stock}"></div>
+						</div>
+						<input th:field="*{Stock}" type="number">
+					</div>
+					<div>
+						<div class="content_file">
+							<input type="file" accept="image/jpeg" class="form-control-file" id="file" name="img"
+								onchange="Filevalidation()" />
+						</div>
+					</div>
+					<div class="content_mante_crear_boton">
+						<input type="submit" value="Actualizar" class="btn btn-primary">
+						<a class="btn btn-primary" th:href="@{/administrar/productos}">Regresar</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/procesar.css}" />
+ 
+    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/js/header.js"></script>
+    <script type="text/javascript" src="/js/CompraExitosa.js"></script>
+    <title>Tortaza</title>
+    <!-- KIT-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-escritorio">
+            <div class="header-top container-fluid  d-flex justify-content-center align-items-center">
+                <p class="mb-0 p-3 "> Contactanos(+51-987-654-321) </p>
+            </div>
+            <div class="header-middle bg-marron container-fluid">
+                <div class="header-middle_container">
+                    <ul class="row-cols-md-5 m-0 p-0 d-flex justify-content-center text-align-center align-items-center">
+                        <li class="col px-3 py-5 header-middle_li">
+                            <a class="header-middle_container_a" href="#">NOSOTROS</a>
+                        </li>
+                        </li>
+                        <li class="col px-3 py-5 header-middle_li">
+                            <a class="header-middle_container_a" th:href="@{/carrito}">CARRITO</a>
+                        </li>
+                        <li class="col py-3 header-middle-container-li_marca">
+                            <a class="header-middle_container_a_title" th:href="@{/menu}">TorTaza</a>
+                        </li>
+                        <li class="col px-3 py-5 header-middle_li">
+                            <a class="header-middle_container_a" th:href="@{/perfil}">PERFIL</a>
+                        </li>
+                        <li class="col px-3 py-5 header-middle_li" th:if="${usuario.nombre==null}">
+                            <a class="header-middle_container_a" th:href="@{/login}">INICIAR SESIÓN</a>
+                        </li>
+                        <li class="col px-3 py-5 header-middle_li" th:if="${usuario.nombre!=null}">
+                            <a class="header-middle_container_a" th:href="@{/salir}">SALIR</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-bottom-nav">
+                <ul class="container-fluid justify-content-center m-0 p-0 d-flex">
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/1}">Buttercream</a>
+                    </li>
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/2}">Chocolate</a>
+                    </li>
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/3}">Tres Leches</a>
+                    </li>
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/4}">Tortas Mini</a>
+                    </li>
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/5}">Frutas</a>
+                    </li>
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/6}">Con Anticipacion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="content-nav-mobile" class="header-mobile bg-warning">
+            <div class="header-top_mobile bg-warning">
+                <div class="nav-mobile-desplegable navbar-light bg-light">
+                    <button id="boton-nav" class="navbar-toggler" type="button" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="panel">
+                        <div class="div_cerrar">
+                            <p id="cerrar" class=""> X </p>
+                        </div>
+
+                        <div id="content-ul_div" class="container-fluid panel-content_ul">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">INICIO</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">NOSOTROS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TIENDAS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">CATEGORIAS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">CONTACTANOS</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <span class="header-mobile_span"> Contactanos<br>(+51-987-654-321) </span>
+                <a class="header-mobile_a">Tortaza</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main_procesar">
+        <div id="mostrar" class="Completadojs">
+            <div id="parrafo">
+                <p>
+                    Compra Realizada Correctamente.
+                </p>
+            </div>
+        </div>
+        <div class="contenedor_PC">
+            <div class="items">
+                <div>
+                Direccion de Envio:
+                </div>
+                <div class="info_usu" >
+                    <div>
+                        <input class="btn_direccion" type="button" name="" value="Cambiar Direccion">
+                    </div>
+                    <div>
+                        <p>Nombre:</p> <p th:text="${usuario.nombre}">Juan</p>
+                    </div>
+                    <div>
+                        <p>Distrito:</p> <p th:text="${usuario.direccion_inicial}">SMP</p>
+                    </div>
+                    <div>
+                        <p>DNI:</p> <p th:text="${usuario.dni}">65498721</p>
+                    </div>
+                </div>
+                <div>
+                Tus Productos:
+                </div>
+                <div class="info_pro" th:each=" producto : ${carrito}">
+                    <div>
+                    	<img th:src="@{/images/{img} (img=${producto.getImagen})}" alt="">
+                    </div>
+                    <ul>
+                        <li>
+                            <p>Envio 1</p>
+                        </li>
+                        <li>
+                            <p th:text="'Producto:  '+${producto.getNombre()}">	asdasd........</p>
+                        </li>
+                        <li class="li_cantidad">
+                            <p>Cantidad:</p>
+                            <input class="cantidad_input" th:value="${producto.getCantidad()}" readonly type="number" >
+                        </li>
+                        <li>
+                            <p th:text="'Precio:  S/'+${producto.getPrecio()}+'0'"></p>
+                        </li>
+                        <li><p>
+                            Enviado y vendido por Tortaza</p>
+                        </li>
+                        <!--<li>
+                            <a href="#">Eliminar</a>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="contenedor_fin">
+                <div class="finaliza_compra">
+                    <div>
+                        <a th:href="@{/comprando}" id="fin" class="btn btn-success">Finalizar Compra</a>
+                    </div>
+                    <div>
+                        <p>Sub Total:</p><p>S/.</p><p th:text="${subtotal}">300</p>
+                    </div>
+                    <div>
+                        <p>Envio:</p><p>Envio Gratis</p>
+                    </div>
+                    <div>
+                        <p>Descuento:</p>
+                    </div>
+                    <div>
+                        <p>Total:</p><p>S/.</p><p th:text="${subtotales}">300</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+<!--
+    <footer class="text-muted py-5">
+        <div class="container">
+            <p class="float-end mb-1">
+                <a href="#">Back to top</a>
+            </p>
+            <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+            <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
+                    href="../getting-started/introduction/">getting started guide</a>.</p>
+        </div>
+    </footer>-->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+/*			PROCESAR COMPRA				*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+	/*word-wrap: break-word;*/
+}
+.main_procesar{
+	background: #F9E79F;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 900;
+}
+.contenedor_PC{
+	background: rgba(185, 185, 185, .2);
+	display: flex;
+
+}
+
+.items{
+	width: 65%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;/* esto hara que se apilen en columnas */
+	/*margin: 1em;*/
+	padding: 1em;
+}
+.items >div:nth-child(1){
+	font-size: 19px;
+	width: 75%;
+	margin-left: auto;
+}
+
+.info_usu{
+	width: 75%;
+	background: rgb(249,219,121);
+	margin: 0.5em;
+	padding: 0.3em;
+	border-radius: 2px;
+	margin-left: auto;
+	border-radius: 4px;
+	box-shadow: 0px 0px 5px 1px rgba(45, 35, 35,0.2);
+}
+.btn_direccion{
+	background: #198754;
+    border: 0px solid rgb(45,35,35);
+    padding: 0.5em;
+    border-radius: 5px;
+    color: white;
+}
+
+.info_usu>div:nth-child(1){
+	float: right;
+	clear: both;
+	font-size: 18px;
+}
+.info_usu>div:nth-child(2){
+
+	padding: 2em 0.3em 0.3em 2.5em;
+	display: flex;
+
+}
+.info_usu>div:nth-child(3){
+	padding: 0.3em 0.3em 0.3em 2.5em;
+
+	display: flex;
+}
+.info_usu>div:nth-child(4){
+	padding: 0.3em 0.3em 2em 2.5em;
+
+	display: flex;
+}
+.info_usu > div >p{
+	padding-right: 0.3em;
+	font-size: 19px;
+}
+.info_usu > div >p:nth-child(1){
+	font-weight: 600;
+}
+
+
+.finaliza_compra{
+	width: 100%;
+	background: rgb(249,219,121);
+	margin: 0.5em;
+	box-shadow: 0px 0px 5px 1px rgb(49 35 35 / 20%);
+}
+.finaliza_compra>div{
+	border-bottom: 1px solid rgb(45, 35, 35);
+}
+.finaliza_compra>div>a{
+	width: 100%;
+	transition: 0.5s all;
+}
+.finaliza_compra>div>a:hover{
+	width: 100%;
+	transform: scale(1.1);
+	box-shadow: 0px 0px 6px 1px rgb(45, 35, 35);
+	transition: 0.5s all;
+}
+/*				FINALIZAR COMPRA 		*/
+.contenedor_fin{
+	width: 35%;
+	padding-top: 2.5em;
+	/*	esta caja se expande, aun falta entender su logica*/
+}
+.finaliza_compra{
+	width: 50%;
+	padding: 1em;
+	border-radius: 3px;
+}
+.finaliza_compra >div>input:nth-child(1){
+	width: 100%;
+	font-weight: 900;
+	font-size: 20px;
+	padding: 0.7em 0em;
+
+}
+.finaliza_compra>div:nth-child(2){
+	padding: 1em 0em;
+	display: flex;
+}
+.finaliza_compra>div:nth-child(3){
+	padding: 1em 0em;
+	display: flex;
+}
+.finaliza_compra>div:nth-child(4){
+	padding: 1em 0em;
+	display: flex;
+}
+.finaliza_compra>div:nth-child(5){
+	padding: 1em 0em;
+	display: flex;
+}
+.finaliza_compra>div>p:nth-child(2){
+	margin-left: auto;
+	padding-left: 0.3em;
+	font-weight: 600;
+}
+.finaliza_compra>div>p:nth-child(3){
+	font-weight: 600;
+}
+
+/*		TUS PRODUCTOS			*/
+
+.items >div:nth-child(3){
+	font-size: 19px;
+	width: 75%;
+	margin-left: auto;
+	padding: 0.5em 0em;
+}
+.info_pro{
+	width: 75%;
+	margin:0.5em ;
+	background: rgb(249,219,121);
+	padding: 0.3em;
+	border-radius: 2px;
+	margin-left: auto;
+	display: flex;
+	font-size: 19px;
+	border-radius: 4px;
+	box-shadow: 0px 0px 5px 1px rgba(45, 35, 35,0.2);
+}
+.info_pro>div:nth-child(1){
+		width: 200px;
+		height: 150px;
+}
+.info_pro>div:nth-child(1)>img{
+	width: 100%;
+	height: 150px;
+	background: orange;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 4px;
+}
+.info_pro>ul{
+	margin: 0em;
+}
+.info_pro>ul>li{
+
+	list-style: none;
+}
+.info_pro>ul>li:nth-child(2){
+	display: flex;
+
+}
+.info_pro>ul>li:nth-child(4){
+	display: flex;
+
+}
+.info_pro>ul>li>p:nth-child(1){
+	font-weight: 600;
+	padding-right: 1em;
+	margin: 0em;
+}
+.info_pro>ul>li:nth-child(5){
+	display: flex;
+
+}
+.btn{
+	width: 50px;
+	text-align: center;
+	font-size: 19px;
+	color: red;
+}
+.info_pro>ul>li:nth-child(7){
+	float: right;
+}
+.info_pro>ul>li>a{
+	color: orange;
+}
+/*			MOSTRAR MENSAJE AL FINALIZAR LA VENTA	*/
+.Completadojs{
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, .56	);
+	justify-content: center;
+	align-items: center;
+
+	display: flex;
+	display: none;
+
+}
+.Completadojs>div>p{
+	font-size: 30px;
+	font-weight: 600;
+	color: orange;
+}
+.Completadojs>div{
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	width: 600px;
+	height: 300px;
+	border-radius: 3px;
+	top: 35%;
+	left: 33%;
+	background: white;
+}
+
+/**/
+.li_cantidad{
+	display: flex;
+}
+.cantidad_input{
+	background: rgb(249,219,121);
+    border: 0px;
+}

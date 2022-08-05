@@ -1,0 +1,129 @@
+/*			SECTION 1  			*/
+
+
+
+.content_login {
+    padding: 1em;
+    box-shadow: 5px 5px 2px 2px silver;
+    background: white;
+}
+
+.st_ul_login {
+    display: flex;
+}
+
+.st_li_login {
+    list-style: none;
+    padding: 1em;
+}
+
+
+
+
+.btn_crear:hover {
+    transition: 1s all;
+    box-shadow: 0px 0px 10px 8px silver;
+}
+
+.content_table {
+    padding: 0.5em 4em 0em 4em;
+}
+
+.caja_producto {
+    border: 1px solid silver;
+    overflow: scroll;
+}
+
+.caja_producto::-webkit-scrollbar {
+    width: 15px;
+}
+
+.st_ul_tit_table {
+    display: flex;
+    background: white;
+}
+
+.st_li_prod,
+.st_li_prod_est {
+    padding: 1em 2em 0.5em 2em;
+    list-style: none;
+    width: 60%;
+}
+
+.st_li_prod_est {
+    width: 100%;
+    text-align: center;
+}
+
+.st_ul_cuerpo_table {
+    display: flex;
+}
+
+.st_li_cuerpo_li,
+.st_li_cuerpo_li_act {
+    list-style: none;
+    width: 60%;
+    border: 1px solid silver;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.st_li_cuerpo_li_act {
+    width: 100%;
+    text-align: center;
+}
+
+
+/*		BOTON DESACTIVAR EDITAR*/
+
+.botones {
+    padding: 0.5em;
+}
+
+.btn_edit {
+    width: 80px;
+    background: #4483CE;
+    display: block;
+    padding: 0.8em;
+    box-shadow: 0px 0px 5px 1px silver;
+    text-decoration: none;
+    color: white;
+    transition: 1s all;
+}
+
+.btn_desac {
+    transition: 1s all;
+    width: 80px;
+    background: #F53240;
+    display: block;
+    padding: 0.8em;
+    box-shadow: 0px 0px 5px 1px silver;
+    text-decoration: none;
+    color: white;
+}
+
+.btn_edit:hover {
+    box-shadow: 0px 0px 10px 8px silver;
+    transition: 1s all;
+}
+
+.btn_desac:hover {
+    box-shadow: 0px 0px 10px 8px silver;
+    transition: 1s all;
+}
+
+
+/***********************************/
+
+
+/*			SECTION 2 	CONTENIDO DESACTIVAR	*/
+
+.content_desactivado {
+    width: 100%;
+    height: 100vh;
+    background: #DCDCDC;
+}
+
+
+/*  **************************************  */

@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+main {
+    display: flex;
+    height: 100%;
+    
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    word-break: break-word;
+    box-sizing: border-box;
+}
+.sec_caja{
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+.dashboard,
+.sombra_dashboard {
+    background: #9387F6;
+    padding: 1em 2em 0em 2em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0px 0px 10px 1px rgb(0 0 0 / 30%);
+    border-radius: 5px;
+    position: fixed;
+}
+
+.title_admin {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.title_admin> a{
+    color: white;
+    padding: 1em;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.content_crear{
+    line-height: 3em;
+    margin-right: 2em;
+}
+.btn_crear {
+    display: block;
+    /*background: #9387F6;*/
+    border: 1px solid #78DCAD;
+    border-radius: 5px;
+    padding: 0em 0.5em;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: 0.5s all;
+    box-shadow: 0px 0px 10px -0.1em #78DCAD;
+}
+.btn_crear:hover {
+    transition: 0.5s all;
+    background: #78DCAD;
+    color: white;
+    box-shadow: 0px 0px 2rem 0.1em #6ac299;
+    
+    
+}
+/**/
+.st_li_prod,
+.st_li_prod_est {
+	padding: 0.3em;
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    background: #4483CE;
+    color: white;
+    font-weight: 600;
+}
+
+.st_li_prod_est {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+.caja{
+    word-wrap: break-word;
+    height: 600px;
+}
+/**/
+
+.st_dash {
+    color: white;
+    padding: 1em 1em 0em 1em;
+    border-bottom: 1px solid white;
+}
+
+.st_dash>p {
+    padding-bottom: 0.5em;
+}
+
+.content_ul {
+    padding: 1em;
+}
+
+.st_ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0em;
+}
+
+.st_li_dash {
+    display: block;
+    list-style: none;
+    line-height: 4em;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+.st_li_dash>a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    display: block;
+}
+.title_mante {
+    background: #9387F6;
+    padding: 0.2em 0em;
+    font-size: 30px;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px 1px rgb(0 0 0 / 30%);
+    margin-bottom: 1em;
+    width: 50%;
+}
+.title_mante > p {
+    text-align: center;
+    margin-bottom: 0em;
+}
+/* crear y buscar */
+
+.content_crear_buscar{
+    display: flex;
+    margin-bottom: 2em;
+
+}
+
+/*      TABLAS          */
+.content_table_all{
+    width: 100%;
+    white-space: nowrap;
+    border-radius: 5px;
+}
+
+thead > tr,
+tbody > tr{
+    
+    text-align: center;
+}
+thead,
+tbody{
+    width: 100%;
+}
+thead > tr>td,
+tbody> tr>td{
+    width: 10%;
+
+}
+thead > tr >td:nth-child(7){
+    text-align: center;
+
+}
+tbody > tr:nth-last-child(odd){
+    background: #9A8FFB;
+}
+
+
+.caja_over_flow {
+    overflow: overlay;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+.content_mantenimiento_general{
+    margin-left: 2em;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*			SECTION 1  	 ANIMACION		*/
+
+body{
+    
+    padding: 3em;
+    /*background-image: linear-gradient(
+        135deg,
+        #00B7D4,
+        #505488,
+        #2F3F80,
+        #161569,
+        #5A4894,
+        #A950A1,
+        #FF7CAE
+    );*/
+    /*
+    background-image: linear-gradient(
+        135deg,
+        #F7B779,
+        #FBC56F,
+        #FBAE84,
+        #FC9CA7,
+        #FC8CB4,
+        #FD78B1,
+        #FF7CAE );
+
+        */
+        background-image: linear-gradient(
+            135deg,
+            #FF7CAE,
+            #5A4894,
+            #A950A1,
+            #505488,
+            #161569
+        );
+    background-size: 500%;
+    animation: fontanimate 10s infinite;
+}
+@keyframes fontanimate {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+
+/*      LAS 2 SECCIONES */
+.content_table,
+.content_table2,
+.content_desactivado,
+.content_desactivado2 {
+    width: 70%;
+    height: 350px;
+    /*height: 44%;*/
+    background: #9387F6;
+    color: white;
+    border-radius: 5px;
+    padding: 1em;
+    box-shadow: 0px 0px 10px 1px rgb(0 0 0 / 30%);
+    margin-bottom: 2em;
+}
+.content_table2,
+.content_desactivado2 {
+    width: 90%;
+}
+
+/*		BOTON DESACTIVAR EDITAR*/
+
+.botones {
+    padding: 0.5em;
+    display: flex;
+}
+
+
+.btn_edit {
+    background: #4483CE;
+    display: block;
+    margin: 0.2em;
+    box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 30%);
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: 0.5s all;
+    padding: 0.4em;
+    text-align: center;
+    
+}
+
+.btn_desac {
+    transition: 0.5s all;
+    margin: 0.2em;
+    background: #F53240;
+    padding: 0.4em;
+    display: block;
+    box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 30%);
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.btn_edit:hover {
+    box-shadow: 0px 0px 5px 2px  rgb(0 0 0 / 38%);
+    transition: 0.5s all;
+    color: white;
+    background: #449fe2;
+}
+
+.btn_desac:hover {
+    box-shadow: 0px 0px 5px 2px  rgb(0 0 0 / 38%);
+    transition: 0.5s all;
+    color: white;
+    background: #f53b20;
+}
+
+/* sombra del dashboard*/
+
+.sombra_dashboard{
+    position: inherit;
+    background: none;
+    box-shadow: none;
+    visibility: hidden;
+}
+
+/*			SECTION 2 	CONTENIDO DESACTIVAR	*/
+.content_desactivado {
+    margin-top: 1em;
+}
+/*			busqueda del producto prueba version 1	*/
+.form_buscar{
+    display: flex;
+    border-radius: 5px;
+    
+    
+    font-family: 'Open Sans', sans-serif;;
+
+}
+.input_search{
+    margin-right: 0.5em;
+    border-radius: 5px;
+    background: #323040;
+    color:white;
+    padding: 0.2em;
+    padding-left: 1em;
+    border: 0;
+    box-shadow: 0px 0px 5px 1px  rgb(0 0 0 / 30%);
+}
+.button_buscar{
+    background: #9387F6;
+    border: 0;
+    color: white;
+    transition: 0.5s all;
+    border-radius: 5px;
+    padding-left: 1em;
+    padding-right: 1em;
+    box-shadow: 0px 0px 5px 1px  rgb(0 0 0 / 30%);
+}
+.button_buscar:hover{
+    
+    background: rgba(147, 135, 246, 0.7);
+    transition: 0.5s all;
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/headerm.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}">
+    <title>
+        Dashboard
+    </title>
+</head>
+<body>
+    <main>
+        <div class="dashboard">
+			<div class="title_admin">
+				<a th:href="@{/salir}">Salir</a>
+			</div>
+			<div class="st_dash">
+				<p>Dashboard</p>
+			</div>
+			<div class="content_ul">
+				<ul class="st_ul">
+					<li class="st_li_dash">
+						<a th:href="@{/administrar/productos}">
+							Mantenimiento de Productos
+						</a>
+					<li class="st_li_dash">
+						<a th:href="@{/administrar/usuarios}">
+							Mantenimiento de Clientes
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+        <div class="sombra_dashboard">
+			<div class="title_admin">
+				<a th:href="@{/salir}">Salir</a>
+			</div>
+			<div class="st_dash">
+				<p>Dashboard</p>
+			</div>
+			<div class="content_ul">
+				<ul class="st_ul">
+					<li class="st_li_dash">
+						<a th:href="@{/administrar/productos}">
+							Mantenimiento de Productos
+						</a>
+					<li class="st_li_dash">
+						<a th:href="@{/administrar/usuarios}">
+							Mantenimiento de Clientes
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+        <div class="content_mantenimiento_general">
+            <div class="title_mante">
+                Mantenimiento de Clientes
+            </div>
+            <div class="content_crear_buscar">
+				<div class="content_crear">
+					<a class="btn_crear" th:href="@{/administrar/usuarios/nuevo}">Nuevo Cliente</a>
+				</div>
+				<form class="form_buscar" method="post" th:action="@{/search}">
+					<input class="mr-sm-2 input_search" type="search" placeholder="Buscar" aria-label="Search" name="nombre"
+						autocomplete="off">
+					<button class=" my-2 my-sm-0 button_buscar" type="submit">Buscar</button>
+				</form>
+			</div>
+            <div th:if="${message}" class="container">
+				<div th:classappend="${'alert-'+message.type}" class="alert text-center" role="alert">
+					<span th:text="${message.content}">
+					</span>
+				</div>
+			</div>
+            <section class="content_table2">
+				<div class="caja_over_flow">
+					<div class="content_titles_mantProducto">
+						<table class="content_table_all">
+							<thead>
+								<tr scope="col">
+									<td>ID</td>
+									<td>NOMBRE</td>
+									<td>APELLIDO</td>
+									<td>DIRECCION</td>
+									<td>DNI</td>
+									<td>CORREO</td>
+                                    <td>ESTADO</td>
+									<td colspan="2">Opciones</td>
+								</tr>
+							</thead>
+                            <tbody>
+								<tr th:each=" usuarios : ${Usuarios}">
+									<td th:text="${usuarios.id_usuario}"></td>
+									<td th:text="${usuarios.nombre}"></td>
+									<td th:text="${usuarios.apellido}"></td>
+									<td th:text="${usuarios.direccion_inicial}"></td>
+									<td th:text="${usuarios.dni}"></td>
+                                    <td th:text="${usuarios.correo}"></td>
+                                    <td th:text="${usuarios.estadousuario}"></td>
+									<!--<td class="st_li_cuerpo_li" th:text="${productos.imagen}"></td>-->
+									<td>
+										<div class="botones">
+											<a th:href="@{/administrar/usuarios/editar/}+${usuarios.id_usuario}" class="btn_edit">Actualizar</a>
+											<a th:href="@{/bloquearusuario/}+${usuarios.id_usuario}" class="btn_desac">Desactivar</a>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+                        </table>
+					</div>
+				</div>
+			</section>
+            <!--				DESACTIVAR USUARIOS			-->
+            <div class="title_mante">
+                Clientes Desactivados
+            </div>
+            <section class="content_table2">
+				<div class="caja_over_flow">
+					<div class="content_titles_mantProducto">
+						<table class="content_table_all">
+							<thead>
+								<tr scope="col">
+									<td>ID</td>
+									<td>NOMBRE</td>
+									<td>APELLIDO</td>
+									<td>DIRECCION</td>
+									<td>DNI</td>
+									<td>CORREO</td>
+                                    <td>ESTADO</td>
+									<td colspan="2">Opciones</td>
+								</tr>
+							</thead>
+                            <tbody>
+								<tr th:each=" usuarios : ${UsuariosBloq}">
+									<td th:text="${usuarios.id_usuario}"></td>
+									<td th:text="${usuarios.nombre}"></td>
+									<td th:text="${usuarios.apellido}"></td>
+									<td th:text="${usuarios.direccion_inicial}"></td>
+									<td th:text="${usuarios.dni}"></td>
+                                    <td th:text="${usuarios.correo}"></td>
+                                    <td th:text="${usuarios.estadousuario}"></td>
+									<!--<td class="st_li_cuerpo_li" th:text="${productos.imagen}"></td>-->
+									<td>
+										<div class="botones">
+											<a th:href="@{/administrar/usuarios/editar/}+${usuarios.id_usuario}" class="btn_edit">Actualizar</a>
+											<a th:href="@{/desbloquearusuario/}+${usuarios.id_usuario}" class="btn_desac">Activar</a>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+                        </table>
+					</div>
+				</div>
+			</section>
+        </div>
+    </main>
+</body>
+</html>

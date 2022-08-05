@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/headerm.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/mantenimientopro.css}" />
+    <title>
+        Dashboard
+    </title>
+
+</head>
+
+<body>
+    <main>
+        <div class="dashboard">
+            <div class="title_admin">
+                <a th:href="@{/salir}">Salir</a>
+            </div>
+            <div class="st_dash">
+                <p>Dashboard</p>
+
+            </div>
+            <div class="content_ul">
+                <ul class="st_ul">
+                    <li class="st_li_dash">
+                        <a th:href="@{/administrar/productos}">
+							Mantenimiento de Productos
+						</a>
+
+                    </li>
+                    <li class="st_li_dash">
+                        <a th:href="@{/administrar/personal}">
+							Mantenimiento de Personal
+						</a>
+
+                    </li>
+                    <li class="st_li_dash">
+                        <a th:href="@{/administrar/usuarios}">
+							Mantenimiento de Usuarios
+						</a>
+
+                    </li>
+                    <li class="st_li_dash">
+                        <a th:href="@{/administrar/pedidos}">
+							Administracion de Ventas
+						</a>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="sec_caja">
+            <div class="content_login">
+                <ul class="st_ul_login">
+                    <li class="st_li_login">
+                        Notificaciones
+                    </li>
+                    <li class="st_li_login">
+                        Mensajes
+                    </li>
+                    <li class="st_li_login">
+                        ADMIN
+                    </li>
+
+                </ul>
+            </div>
+            <div class="title_mante">
+                Ventas
+            </div>
+            
+            <section class="content_table">
+                <div class="caja_producto">
+                    <div>
+                        <ul class="st_ul_tit_table">
+                            <li class="st_li_prod">
+                                ID_PEDIDOS
+                            </li>
+                            <li class="st_li_prod">
+                                USUARIO
+                            </li>
+                            
+                            
+                            <li class="st_li_prod_est">
+                                ESTADO PAGO
+                            </li>
+                            <li class="st_li_prod">
+                                FECHA
+                            </li>
+                            <li class="st_li_prod">
+                                TOTAL
+                            </li>
+                            <li class="st_li_prod_est">
+                                ESTADO PEDIDO
+                            </li>
+                            <li class="st_li_prod_est">
+                                MANTENIMIENTO
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="caja">
+                        <ul class="st_ul_cuerpo_table" th:each=" pedido: ${Pedidos}">
+                            <li class="st_li_cuerpo_li" th:text="${pedido.id_pedido}">
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${pedido.usuario.nombre}">
+                            </li>
+                            
+                            <li class="st_li_cuerpo_li" th:if="${pedido.estadopago==true}" th:text="VERIFICADO">
+                            </li>
+                            <li class="st_li_cuerpo_li" th:if="${pedido.estadopago==false}" th:text="RECHAZADO">
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${pedido.fecha}">
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${pedido.total}">
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${pedido.estadopedido}">
+                            </li>
+                            <li class="st_li_cuerpo_li_act">
+                                <div class="botones">
+                                    <a th:href="@{/administrar/detalle/}+${pedido.id_pedido}" class="btn_edit">Ver Detalle</a>
+                                </div>
+                                <div class="botones">
+                                    <a th:href="@{/bloquearpedido/}+${pedido.id_pedido}" class="btn_desac">Desactivar</a>
+                                </div>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </section>
+
+            <!--				DESACTIVAR PRODUCTOS			-->
+
+            <section class="content_desactivado">
+                <div class="title_mante">
+                    Productos Desactivados
+                </div>
+
+                <div class="content_table">
+                    <div class="caja_producto">
+                        <div>
+                            <ul class="st_ul_tit_table">
+                                <li class="st_li_prod">
+                                    ID_PEDIDOS
+                                </li>
+                                <li class="st_li_prod">
+                                    USUARIO
+                                </li>
+                                
+                                
+                                <li class="st_li_prod_est">
+                                    ESTADO PAGO
+                                </li>
+                                <li class="st_li_prod">
+                                    FECHA
+                                </li>
+                                <li class="st_li_prod">
+                                    TOTAL
+                                </li>
+                                <li class="st_li_prod_est">
+                                    ESTADO PEDIDO
+                                </li>
+                                <li class="st_li_prod_est">
+                                    MANTENIMIENTO
+                                </li>
+                            </ul>
+    
+                        </div>
+                        <div class="caja">
+                            <ul class="st_ul_cuerpo_table" th:each=" pedido: ${PedidosBloq}">
+                                <li class="st_li_cuerpo_li" th:text="${pedido.id_pedido}">
+                                </li>
+                                <li class="st_li_cuerpo_li" th:text="${pedido.usuario.nombre}">
+                                </li>
+                                
+                                <li class="st_li_cuerpo_li" th:if="${pedido.estadopago==true}" th:text="VERIFICADO">
+                                </li>
+                                <li class="st_li_cuerpo_li" th:if="${pedido.estadopago==false}" th:text="RECHAZADO">
+                                </li>
+                                <li class="st_li_cuerpo_li" th:text="${pedido.fecha}">
+                                </li>
+                                <li class="st_li_cuerpo_li" th:text="${pedido.total}">
+                                </li>
+                                <li class="st_li_cuerpo_li" th:text="${pedido.estadopedido}">
+                                </li>
+                                <li class="st_li_cuerpo_li_act">
+                                    <div class="botones">
+                                        <a th:href="@{/administrar/detalle/}+${pedido.id_pedido}" class="btn_edit">Ver Detalle</a>
+                                    </div>
+                                    <div class="botones">
+                                        <a th:href="@{/desbloquearpedido/}+${pedido.id_pedido}" class="btn_desac">Activar</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/headerm.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/mantenimientoper.css}" />
+    <title>
+        Dashboard
+    </title>
+
+</head>
+
+<body>
+    <main>
+        <div class="dashboard">
+            <div class="title_admin">
+                <a th:href="@{/salir}">Salir</a>
+            </div>
+            <div class="st_dash">
+                <p>Dashboard</p>
+
+            </div>
+            <div class="content_ul">
+                <ul class="st_ul">
+                    <li class="st_li_dash">
+                        <a th:href="@{/administrar/productos}">
+							Mantenimiento de Productos
+						</a>
+
+                    </li>
+                    <li class="st_li_dash">
+                        <a th:href="@{/administrar/personal}">
+							Mantenimiento de Personal
+						</a>
+
+                    </li>
+                    <li class="st_li_dash">
+                        <a th:href="@{/administrar/usuarios}">
+							Mantenimiento de Usuarios
+						</a>
+
+                    </li>
+                    <li class="st_li_dash">
+                        <a th:href="@{/administrar/pedidos}">
+							Administracion de Ventas
+						</a>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="sec_caja">
+            <div class="content_login">
+                <ul class="st_ul_login">
+                    <li class="st_li_login">
+                        Notificaciones
+                    </li>
+                    <li class="st_li_login">
+                        Mensajes
+                    </li>
+                    <li class="st_li_login">
+                        ADMIN
+                    </li>
+
+                </ul>
+            </div>
+            <div class="title_mante">
+                Mantenimiento de Personal
+            </div>
+            <div class="content_crear">
+                <a class="btn_crear" th:href="@{/administrar/personal/nuevo}">Registrar </a>
+            </div>
+            <section class="content_table">
+                <div class="caja_producto">
+                    <div>
+                        <ul class="st_ul_tit_table">
+                            <li class="st_li_prod">ID</li>
+                            <li class="st_li_prod">NOMBRE</li>
+                            <li class="st_li_prod">APELLIDO</li>
+                            <li class="st_li_prod">DIRECCION</li>
+                            <li class="st_li_prod_est">DNI</li>
+                            <li class="st_li_prod_est">CORREO</li>
+                            <li class="st_li_prod_est">ESTADO</li>
+                            <li class="st_li_prod_est">MANTENIMIENTO</li>
+                        </ul>
+
+
+
+                    </div>
+                    <div class="caja">
+                        <ul class="st_ul_cuerpo_table" th:each=" usuarios : ${Personal}">
+                            <li class="st_li_cuerpo_li" th:text="${usuarios.id_usuario}">
+
+
+
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${usuarios.nombre}">
+
+
+
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${usuarios.apellido}">
+
+
+
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${usuarios.direccion_inicial}">
+
+
+
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${usuarios.dni}">
+
+
+
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${usuarios.correo}">
+
+
+
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${usuarios.estadousuario}">
+
+
+
+                            </li>
+
+
+
+                            <li class="st_li_cuerpo_li_act">
+                                <div class="botones">
+                                    <a th:href="@{/administrar/personal/editar/}+${usuarios.id_usuario}" class="btn_edit">Editar</a>
+                                </div>
+                                <div class="botones">
+                                    <a th:href="@{/bloquearpersonal/}+${usuarios.id_usuario}" class="btn_desac">Bloquear</a>
+                                </div>
+
+
+
+                            </li>
+
+
+
+                        </ul>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+            </section>
+            <div class="title_mante">
+                Personal Bloqueado
+            </div>
+            <section class="content_table">
+                <div class="caja_producto">
+                    <div>
+                        <ul class="st_ul_tit_table">
+                            <li class="st_li_prod">ID</li>
+                            <li class="st_li_prod">NOMBRE</li>
+                            <li class="st_li_prod">APELLIDO</li>
+                            <li class="st_li_prod">DIRECCION</li>
+                            <li class="st_li_prod_est">DNI</li>
+                            <li class="st_li_prod_est">CORREO</li>
+                            <li class="st_li_prod_est">ESTADO</li>
+                            <li class="st_li_prod_est">MANTENIMIENTO</li>
+                        </ul>
+
+
+
+                    </div>
+                    <div class="caja">
+                        <ul class="st_ul_cuerpo_table" th:each=" usuarios : ${PersonalBloq}">
+                            <li class="st_li_cuerpo_li" th:text="${usuarios.id_usuario}">
+
+
+
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${usuarios.nombre}">
+
+
+
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${usuarios.apellido}">
+
+
+
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${usuarios.direccion_inicial}">
+
+
+
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${usuarios.dni}">
+
+
+
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${usuarios.correo}">
+
+
+
+                            </li>
+                            <li class="st_li_cuerpo_li" th:text="${usuarios.estadousuario}">
+
+
+
+                            </li>
+
+
+
+                            <li class="st_li_cuerpo_li_act">
+                                <div class="botones">
+                                    <a th:href="@{/administrar/personal/editar/}+${usuarios.id_usuario}" class="btn_edit">Editar</a>
+                                </div>
+                                <div class="botones">
+                                    <a th:href="@{/desbloquearpersonal/}+${usuarios.id_usuario}" class="btn_desac">Desbloquear</a>
+                                </div>
+
+
+
+                            </li>
+
+
+
+                        </ul>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

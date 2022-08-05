@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/productos.css}" />
+    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/js/header.js"></script>
+    <title>Tortaza</title>
+    <!-- KIT-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-escritorio">
+            <div class="header-top container-fluid  d-flex justify-content-center align-items-center">
+                <p class="mb-0 p-3 "> Contactanos(+51-987-654-321) </p>
+            </div>
+            <div class="header-middle bg-marron container-fluid">
+                <div class="header-middle_container">
+                    <ul
+                        class="row-cols-md-5 m-0 p-0 d-flex justify-content-center text-align-center align-items-center">
+                        <li class="col px-3 py-5 header-middle_li">
+                            <a class="header-middle_container_a" href="#">NOSOTROS</a>
+                        </li>
+                        </li>
+                        <li class="col px-3 py-5 header-middle_li">
+                            <a class="header-middle_container_a" th:href="@{/carrito}">CARRITO</a>
+                        </li>
+                        <li class="col py-3 header-middle-container-li_marca">
+                            <a class="header-middle_container_a_title" th:href="@{/menu}">TorTaza</a>
+                        </li>
+                        <li class="col px-3 py-5 header-middle_li">
+                            <a class="header-middle_container_a" th:href="@{/perfil}">PERFIL</a>
+                        </li>
+                        <li class="col px-3 py-5 header-middle_li" th:if="${usuario.nombre==null}">
+                            <a class="header-middle_container_a" th:href="@{/login}">INICIAR SESIÓN</a>
+                        </li>
+                        <li class="col px-3 py-5 header-middle_li" th:if="${usuario.nombre!=null}">
+                            <a class="header-middle_container_a" th:href="@{/salir}">SALIR</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-bottom-nav">
+                <ul class="container-fluid justify-content-center m-0 p-0 d-flex">
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/1}">Buttercream</a>
+                    </li>
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/2}">Chocolate</a>
+                    </li>
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/3}">Tres Leches</a>
+                    </li>
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/4}">Tortas Mini</a>
+                    </li>
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/5}">Frutas</a>
+                    </li>
+                    <li class="p-3 header-escritorio_li">
+                        <a th:href="@{/productos/6}">Con Anticipacion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="content-nav-mobile" class="header-mobile bg-warning">
+            <div class="header-top_mobile bg-warning">
+                <div class="nav-mobile-desplegable navbar-light bg-light">
+                    <button id="boton-nav" class="navbar-toggler" type="button" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="panel">
+                        <div class="div_cerrar">
+                            <p id="cerrar" class=""> X </p>
+                        </div>
+
+                        <div id="content-ul_div" class="container-fluid panel-content_ul">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">INICIO</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">NOSOTROS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TIENDAS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">CATEGORIAS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">CONTACTANOS</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <span class="header-mobile_span"> Contactanos<br>(+51-987-654-321) </span>
+                <a class="header-mobile_a">Tortaza</a>
+            </div>
+        </div>
+    </header>
+    <!-- ALBUM-->
+    <main>
+        <section class="text-center">
+            <div class="content_album">
+                <div class="header_img">
+                    <img src="./img/imagenPostrePrincipal.png" width="100%">
+                </div>
+            </div>
+        </section>
+
+        
+
+    </main>
+    <div th:fragment="footer">
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white"> &copy; Tortazas </p>
+            </div>
+            <!-- /.container -->
+        </footer>
+    </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+
+</body>
+
+</html>

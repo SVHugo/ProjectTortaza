@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+/*     Colors Para el Header */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --bgcolor-contactanos: rgb(49, 30, 36);
+    --bgcolor-categorias: rgb(249,219,121);
+    --bgcolor-tituloPrincipal: rgb(249,219,121);
+}
+/*      Colores de letras para el Header*/
+:root{
+    --color-contactanos: rgb(255,255,255);
+
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.bg-marron {
+    background: rgb(49, 30, 36);
+}
+
+.fondo {
+    background: url(fondo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat no-repeat;
+    background-size: cover;
+}
+
+.header-escritorio {
+    display: block;
+}
+
+.header-mobile {
+    display: none !important;
+}
+
+.header-mobile-top_container {
+    width: 100%;
+}
+
+.header-escritorio_li {
+    list-style-type: none;
+}
+.header-escritorio_li>a {
+    text-decoration: none;
+    color: rgb(49, 30, 36);
+    font-size: 18px;
+    display: block;
+    padding: 0.5em;
+    transition: 0.5s all;
+    border-radius: 5px;
+    font-weight: 900;
+}
+.header-escritorio_li>a:hover {
+    color: rgb(49, 30, 36);
+    background-color: rgba(49, 30, 36,0.1);
+    box-shadow: 0px 0px 20px 5px rgba(49, 30, 36,0.4);
+    transition: 0.5s all;
+}
+.header-top {
+    width: 100%;
+    height: 55px;
+    background-color: var(--bgcolor-contactanos);
+    font-family: 'Open Sans', sans-serif;
+}
+.header-top > p{
+    color: var(--color-contactanos);
+    font-weight: 900;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+/**/
+.header-bottom-nav {
+    width: 100%;
+    background-color: var(--bgcolor-categorias);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 900;
+}
+
+.header-middle {
+    width: 100%;
+    background-color: var(--bgcolor-tituloPrincipal);
+}
+
+.xxxxxx {
+    color: white;
+    list-style-type: none;
+    text-align: center;
+}
+
+.header-middle_container {
+    width: 75%;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+}
+.header-middle_li{
+    text-align: center;
+    list-style-type: none;
+    font-weight: 900;
+}
+.header-middle-container-li_marca {
+    /*padding: 0em 3em 0em 3em;*/
+    letter-spacing: 2px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-middle_container_a {
+    text-decoration: none;
+    color: rgb(49, 30, 36);
+    
+    transition: 0.5s all;
+}
+.header-middle_container_a_title{
+    text-decoration: none;
+    color: rgb(49, 30, 36);
+    font-family: 'Festive', sans-serif;
+    font-size: 75px;
+    font-weight: 700;
+    transition: 0.5s all;
+
+    /*width: 100%;
+    border: 1px solid rgb(45,35,35);
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0px 0px 5px 1px rgb(45 35 35);*/
+}
+
+.header-middle_container_a:hover,
+.header-middle_container_a_title:hover {
+    color: white;
+    transition: 0.5s all;
+}
+.header-top_mobile {
+    display: none;
+    width: 100% !important;
+    display: flex !important;
+}
+
+header>div>p {
+    margin-top: 2em !important;
+}
+
+
+
+.header-mobile_span {
+    text-decoration: none;
+    width: 70%;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center;
+    color: rgb(49, 30, 36);
+}
+
+.header-mobile_a {
+    text-decoration: none;
+    width: 30%;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center;
+    color: rgb(49, 30, 36);
+}
+
+.nav-mobile-desplegable {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 1em;
+}
+
+#boton-nav {
+    z-index: 99;
+}
+
+#panel {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+}
+
+.panel-content_ul {
+    background: white;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+
+#panel_cerrar {
+    display: none;
+    background: white;
+    display: block;
+    z-index: 9999;
+    font-weight: 600;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.div_cerrar {
+    width: 100%;
+    text-align: right;
+    background: white;
+    padding-top: 10px;
+    padding-right: 20px;
+    font-size: 30px;
+}
+
+#cerrar {
+    background: white;
+    display: inline;
+}
+
+
+/*			ALBUM		*/
+
+.content_album {
+    width: 100%;
+}
+
+.centrar_album {
+    width: 50%;
+    padding: 1em;
+    z-index: 999;
+    position: absolute;
+    height: 650px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.info_album {
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+/*	HEADER IMAGEN		*/
+
+.header_img {
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.cat {
+    height: 0px;
+    width: 30px;
+}
+
+
+/* RESPONSIVE HUGO */
+/*  ESTO AUN LE FALTA */
+/*
+@media only screen and (max-width:850px) {
+    .header-escritorio {
+        display: none;
+    }
+    .header-mobile {
+        display: block !important;
+    }
+    .header-top_mobile {
+        display: block;
+    }
+}
+*/
+
+
+
+/*   ESTRELLITAS XD XD  */
+
+
+.calificaciones{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    line-height: 1;
+    
+    
+}
+output{
+    
+    color: rgb(253, 246, 246);
+}
+/* Contenedor de calificaciones */
+.contenedor_califacaciones{
+    width: 200px;
+    height: 330px;
+    background: var(--bgcolor-categorias);
+    padding: 0.5em;
+    
+    border-radius: 5px;
+    border: 1px solid black;
+
+    /* sombreado
+        a ) izqueirda y derecha
+        b) arriba y abajo
+        c) profundidad de sombreado
+    */
+
+    box-shadow: 0px 90px 5rem -3rem red;
+}
+.comentario{
+    width: 100%;
+
+
+}
+textarea{
+    width: 100%;
+    height: 150px;
+    background-color: green;
+    outline: none;
+    border: 0px;
+}
+.rate{
+    width: 100px;
+    margin: 1em auto;
+}
+.estilosH3{
+    font-size: 15px;
+    margin-bottom:0.5em;
+    text-align: center;
+}
+.boton_enviar{
+    width: 100%;
+    text-align: center;
+}
